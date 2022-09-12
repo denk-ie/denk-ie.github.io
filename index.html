@@ -4,35 +4,215 @@
 <head>
     <meta charset="UTF-8">
     <title>Near Collisions Dashboard</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
     integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="static/css/stylesheet.css">
+    <link rel="stylesheet" href="static/css/stylesheet.css"> -->
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="https://cdn.plot.ly/plotly-2.14.0.min.js"></script>
+
+    <link rel="stylesheet" href="stylesheet.css">
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <!-- Social Icons Style Sheet-->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
 
+
+
+    <!-- Nav Menu Section-->
+<header>
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>                        
+            </button>
+            <a class="navbar-brand" href="#"><img src="Images/space.png" alt="Space" class="responsivelogo" width="50" height=""> </a>
+          </div>
+          <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="index.html">Home</a></li>
+              <li><a href="">Visual Charts</a></li>
+              <li><a href="">Visual Tables</a></li>
+              <li><a href="">Scatter Plot</a></li>
+              <li><a href="">Glossary</a></li>
+              
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"></span> Created by: Andrew King |  Paul Wang | Denise Okur | Dante Company</a></li>
+           
+              </ul>
+
+        </div>
+        </div>
+        </nav>
+ 
+        <div class="center">
+            <div class="textcolor">
+            <h1>NEAR COLLISIONS IN SPACE</h1>
+            <p>Data collected using NASA's SBDB (small-body database) Close-Approach Data API</p>
+            </div>
+          </div>
+
+    <!--End Nav Menu Section-->
+
+    </header>
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h1>Near Collisions in Space</h1>
-                <h6>Data collected using NASA's SBDB (small-body database) Close-Approach Data API</h6>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-12  col-md-9">
-                <div id="plot1">
-                <!-- We append our chart here. -->
-                </div>
-            </div>
-        </div>
+
+    <br>
+    <div class="txtimg">
+     
+      <img src="Images/space4.jpeg" alt="Space" class ="responsive" width = "2000" height="">
     </div>
 
-    <div id="footer">
-        <p>by Paul Wang, Andrew King & Denise Okur</p>
     </div>
+  
+    <!-- <div class="txtimg">
+        <div class="learnimgsize">
+          <img src="Images/space4.jpeg" alt="Weather" width = "1500px" height="auto">
+        </div>  
+          <div class="textcentered">
+            <h1>NEAR COLLISIONS IN SPACE</h1>
+            <div class="learnJour">  
+              <p></p>
+            </div>  
+          </div>
+      </div>
 
-    <script type="text/javascript" src="static/js/plots.js"></script>
+<BR> -->
+
+    <!-- <div class="center">
+        <p>Data collected using NASA's SBDB (small-body database) Close-Approach Data API</p>
+    </div> -->
+
+    <br>
+
+<!--The Graph Layout-->
+<div class="textcolor">
+<div class="center">
+    <h1> LEARN ABOUT COLLISIONS</h1>
+</div>
+</div>
+
+<div class="center">
+  <div class="row align-items-center"> 
+    <div class="col-lg-3">
+        <a href="">
+            <img src="Images/fig3.png"
+            alt = "Sample" height="auto" width="100%">
+            <a href="cloudvslat.html"> <button type="button" class="btn btn-outline-dark">Learn More</button> </a>
+        </a>
+    </div>
+    <div class="col-lg-3">
+        <a href="TempLat.html">
+            <img src="Images/fig1.png"
+            alt = "Sample" height="auto" width="100%">
+            <a href="TempLat.html"> <button type="button" class="btn btn-outline-dark">Learn More</button> </a>
+        </a>
+    </div>
+    <div class="col-lg-3">
+        <a href="humvslat.html">
+            <img src="Images/fig2.png"
+            alt = "Sample" height="auto" width="100%">
+            <a href="humvslat.html"> <button type="button" class="btn btn-outline-dark">Learn More</button> </a>
+        </a>
+    </div>
+    <div class="col-lg-3">
+        <a href="windvslat.html">
+            <img src="Images/fig4.png"
+            alt = "Sample" height="auto" width="100%">
+            <a href="windvslat.html"> <button type="button" class="btn btn-outline-dark">Learn More</button> </a>
+        </a>
+    </div>
+</div>
+</div>
+<BR>
+   
+
+<div class="txtimg">
+  <div class="learnimgsize">
+    <img src="Images/space5.jpeg" alt="Weather" class ="responsive" width = "2000" height="">
+  </div>  
+    <div class="textcentered">
+      <h1>OUR LOCAL LANDSCAPE</h1>
+    </div>
+</div>
+
+<br>
+<div class="textcolor">
+  <div class="center">    
+
+    <h3>The local space surrounding earth has a multitude of comets, asteroids and various
+        detritus, which are frequently at risk of colliding the Earth. NASA’s Jet Propulsion
+        Laboratory has been </h3> <h3>tracking these various objects and plotting their future trajectories.
+        These NEO’s (Near Earth Objects) are potentially hazardous to terrestrial life to varying
+        degrees, and also populate our local space region. </h3>
+    
+        <h3>One astronomical unit (AU) is the distance between Earth and the Sun. This is around 150
+        million kilometres or 8.3 light minutes.
+        A small solar system body is considered to be a NEO </h3><h3>if it travels within 1.3 astronomical
+        units (AU) of the Sun. The more dangerous of these bodies are refered as Potentially
+        Hazardous Asteroids (PHA). These are defined by their potential to make threatening close
+        approaches to the Earth. </h3>
+    
+        </div> 
+</div>
+
+<br>
+
+<!-- SCRIPT SECTION-->
+
+<script type="text/javascript" src="static/js/plots.js"></script>
+
+
+ 
+ <!--Button back to top-->
+  <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+  <script>
+
+    /* BACK TO TOP BUTTON SECTION */
+    //Get the button
+    var mybutton = document.getElementById("myBtn");
+    
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function() {scrollFunction()};
+    
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    }
+    
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+
+/* END BACK TO TOP BUTTON SECTION */
+
+</script>
+
+    <div class ="footer">
+       
+        <H2>NEAR COLLISIONS IN SPACE</H2>
+        <P>Data collected using NASA's SBDB (small-body database) Close-Approach Data API</P>
+        <p>Created by: Andrew King | Paul Wang | Denise Okur | Dante Company</p>
+      </div>
+      
 
 </body>
 </html>
