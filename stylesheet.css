@@ -33,7 +33,6 @@ p{
     max-width: 100%;
     
   }
-  }
 
   .headerpadding{
     margin-top: 20px;
@@ -115,11 +114,7 @@ p{
   color:#fff;
   font-family:fantasy;
   font-size: 120px;
-  
-
 }
-
-
 
 .rewardbtn {
   border: 2px solid black;
@@ -210,10 +205,6 @@ p{
 
 /* End side by side menu made and delivered section */
 
-
-
-
-
-
-
-
+/* #chart1 {
+  background-color: black;
+} */
