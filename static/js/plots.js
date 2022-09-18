@@ -17,7 +17,7 @@ var t_sigma_f = [];
 var body = [];
 var h = [];
 
-$.getJSON("data/response.json").then((neodata) => {
+$.getJSON("static/js/response.json").then((neodata) => {
     neodata.data.forEach(function(x) {
         des.push(x[0]);          
         orbit_id.push(x[1]);
@@ -105,7 +105,7 @@ var phat_sigma_f = [];
 var phabody = [];
 var phah = [];
 
-$.getJSON("data/pha.json").then((phadata) => {
+$.getJSON("static/js/pha.json").then((phadata) => {
 phadata.data.forEach(function(x) {
     phades.push(x[0]);          
     phaorbit_id.push(x[1]);
@@ -127,6 +127,8 @@ const coords2 = phadist_min.map((x, j) => ({x, y: 0, r: phah[j]}));
         //     if (i[0] > 0.05 || i[2] > 22.0) {
         //         delete coords2[i];
         //     }});
+    
+console.log(phah);
     
         const data2 = {
             datasets: [{
