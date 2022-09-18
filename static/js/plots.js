@@ -17,7 +17,7 @@ var t_sigma_f = [];
 var body = [];
 var h = [];
 
-$.getJSON("static/js/response.json").then((neodata) => {
+$.getJSON("data/response.json").then((neodata) => {
     neodata.data.forEach(function(x) {
         des.push(x[0]);          
         orbit_id.push(x[1]);
@@ -89,6 +89,13 @@ $.getJSON("static/js/response.json").then((neodata) => {
         document.getElementById('chart1'),
         config1
         );
+
+// Third visualisation (table)
+
+    
+
+
+
     });
 // Second visualisation
 
@@ -105,7 +112,7 @@ var phat_sigma_f = [];
 var phabody = [];
 var phah = [];
 
-$.getJSON("static/js/pha.json").then((phadata) => {
+$.getJSON("data/pha.json").then((phadata) => {
 phadata.data.forEach(function(x) {
     phades.push(x[0]);          
     phaorbit_id.push(x[1]);
@@ -122,13 +129,6 @@ phadata.data.forEach(function(x) {
 })
 
 const coords2 = phadist_min.map((x, j) => ({x, y: 0, r: phah[j]}));
-
-        // coords2.forEach(i => {
-        //     if (i[0] > 0.05 || i[2] > 22.0) {
-        //         delete coords2[i];
-        //     }});
-    
-console.log(phah);
     
         const data2 = {
             datasets: [{
@@ -141,31 +141,31 @@ console.log(phah);
     
 
 
-            const zoomOptions = {
-                limits: {
-                  x: {min: -200, max: 200, minRange: 50},
-                  y: {min: -1, max: 1, minRange: 10}
-                },
-                pan: {
-                  enabled: true,
-                  mode: 'xy',
-                },
-                zoom: {
-                  wheel: {
-                    enabled: true,
-                  },
-                  pinch: {
-                    enabled: true
-                  },
-                  mode: 'xy',
-                  onZoomComplete({chart}) {
-                    // This update is needed to display up to date zoom level in the title.
-                    // Without this, previous zoom level is displayed.
-                    // The reason is: title uses the same beforeUpdate hook, and is evaluated before zoom.
-                    chart.update('none');
-                  }
-                }
-              };
+            // const zoomOptions = {
+            //     limits: {
+            //       x: {min: -200, max: 200, minRange: 50},
+            //       y: {min: -1, max: 1, minRange: 10}
+            //     },
+            //     pan: {
+            //       enabled: true,
+            //       mode: 'xy',
+            //     },
+            //     zoom: {
+            //       wheel: {
+            //         enabled: true,
+            //       },
+            //       pinch: {
+            //         enabled: true
+            //       },
+            //       mode: 'xy',
+            //       onZoomComplete({chart}) {
+            //         // This update is needed to display up to date zoom level in the title.
+            //         // Without this, previous zoom level is displayed.
+            //         // The reason is: title uses the same beforeUpdate hook, and is evaluated before zoom.
+            //         chart.update('none');
+            //       }
+            //     }
+            //   };
 
         const config2 = {
             type: 'bubble',
@@ -183,7 +183,6 @@ console.log(phah);
                     },
                     scales: {
                         x: {
-                            // max: 0.007,
                             title: {
                                 display: true,
                                 text: 'Distance (au)'
@@ -195,16 +194,11 @@ console.log(phah);
                             }
             }
             };
-            // Object.keys(scales).forEach(scale => Object.assign(scales[scale], scaleOpts));
         const chart2 = new Chart(
             document.getElementById('chart2'),
             config2
             )
     })
-
-
-
-// Third visualisation
 
 //     });
 // }
