@@ -17,7 +17,7 @@ var t_sigma_f = [];
 var body = [];
 var h = [];
 
-$.getJSON("static/js/response.json").then((neodata) => {
+$.getJSON("data/response.json").then((neodata) => {
     neodata.data.forEach(function(x) {
         des.push(x[0]);          
         orbit_id.push(x[1]);
@@ -91,12 +91,12 @@ var phadist = [];
 var phadist_min = [];
 var phadist_max = [];
 var phav_rel = [];
-var phav_inf = [];
-var phat_sigma_f = [];
-var phabody = [];
+// var phav_inf = [];
+// var phat_sigma_f = [];
+// var phabody = [];
 var phah = [];
 
-$.getJSON("static/js/pha.json").then((phadata) => {
+$.getJSON("data/pha.json").then((phadata) => {
 phadata.data.forEach(function(x) {
     phades.push(x[0]);          
     phaorbit_id.push(x[1]);
@@ -106,9 +106,9 @@ phadata.data.forEach(function(x) {
     phadist_min.push(x[5]);
     phadist_max.push(x[6]);
     phav_rel.push(x[7]);
-    phav_inf.push(x[8]);
-    phat_sigma_f.push(x[9]);
-    phabody.push(x[10]);
+    // phav_inf.push(x[8]);
+    // phat_sigma_f.push(x[9]);
+    // phabody.push(x[10]);
     phah.push(x[11]);
 })
 
@@ -118,8 +118,6 @@ const coords2 = phadist_min.map((x, j) => ({x, y: 0, r: 1.5*phah[j]}));
         //     if (i[0] > 0.05 || i[2] > 22.0) {
         //         delete coords2[i];
         //     }});
-    
-console.log(phah);
     
         const data2 = {
             datasets: [{
@@ -169,7 +167,6 @@ console.log(phah);
                     },
                     scales: {
                         x: {
-                            // max: 0.007,
                             title: {
                                 display: true,
                                 text: 'Distance (au)'
@@ -187,8 +184,6 @@ console.log(phah);
             config2
             )
     })
-
-
 
 // Third visualisation
 
