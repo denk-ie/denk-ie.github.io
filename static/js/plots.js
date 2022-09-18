@@ -38,7 +38,6 @@ $.getJSON("data/response.json").then((neodata) => {
 
     const data1 = {
         datasets: [{
-            label: '',
             data: coords1,
             backgroundColor: 'rgb(252, 165, 3, 0.4)'
         }],
@@ -49,8 +48,19 @@ $.getJSON("data/response.json").then((neodata) => {
         data: data1,
         options: {
             plugins: {
+                tooltip: {
+                    callbacks: {
+                            // title: function(context) {
+                            //     return (context.des)
+                            // },
+                            // label: function(context) {
+                                // return `Velocity: ${v_rel[context]} Magnitude: ${h[context]}`
+                            // },
+                        }
+                    }
+                },
                 legend: {
-                    display: false
+                    display: true
                     },
                 title: {
                     display: true,
@@ -74,13 +84,12 @@ $.getJSON("data/response.json").then((neodata) => {
                 }
                 }
             }
-        };
-
+        
     const chart1 = new Chart(
         document.getElementById('chart1'),
         config1
         );
-    })
+    });
 // Second visualisation
 
 var phades = [];
@@ -91,9 +100,9 @@ var phadist = [];
 var phadist_min = [];
 var phadist_max = [];
 var phav_rel = [];
-// var phav_inf = [];
-// var phat_sigma_f = [];
-// var phabody = [];
+var phav_inf = [];
+var phat_sigma_f = [];
+var phabody = [];
 var phah = [];
 
 $.getJSON("data/pha.json").then((phadata) => {
@@ -106,13 +115,13 @@ phadata.data.forEach(function(x) {
     phadist_min.push(x[5]);
     phadist_max.push(x[6]);
     phav_rel.push(x[7]);
-    // phav_inf.push(x[8]);
-    // phat_sigma_f.push(x[9]);
-    // phabody.push(x[10]);
+    phav_inf.push(x[8]);
+    phat_sigma_f.push(x[9]);
+    phabody.push(x[10]);
     phah.push(x[11]);
 })
 
-const coords2 = phadist_min.map((x, j) => ({x, y: 0, r: 1.5*phah[j]}));
+const coords2 = phadist_min.map((x, j) => ({x, y: 0, r: phah[j]}));
 
         // coords2.forEach(i => {
         //     if (i[0] > 0.05 || i[2] > 22.0) {
@@ -121,13 +130,15 @@ const coords2 = phadist_min.map((x, j) => ({x, y: 0, r: 1.5*phah[j]}));
     
         const data2 = {
             datasets: [{
-                label: 'Asteroids magnitude (h)',
+                label: 'Asteroids distance (au) and magnitude (h)',
                 data: coords2,
                 backgroundColor: 'rgb(70, 119, 184, 0.6)',
                 borderWidth: 5
                 }]
             };
     
+
+
             const zoomOptions = {
                 limits: {
                   x: {min: -200, max: 200, minRange: 50},
@@ -159,6 +170,9 @@ const coords2 = phadist_min.map((x, j) => ({x, y: 0, r: 1.5*phah[j]}));
             data: data2,
             options: {
                 plugins: {
+                    // tooltip: {
+                    //     callbacks: {
+
                     zoom: zoomOptions,
                     title: {
                         display: true,
@@ -167,6 +181,7 @@ const coords2 = phadist_min.map((x, j) => ({x, y: 0, r: 1.5*phah[j]}));
                     },
                     scales: {
                         x: {
+                            // max: 0.007,
                             title: {
                                 display: true,
                                 text: 'Distance (au)'
@@ -184,6 +199,8 @@ const coords2 = phadist_min.map((x, j) => ({x, y: 0, r: 1.5*phah[j]}));
             config2
             )
     })
+
+
 
 // Third visualisation
 
